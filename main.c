@@ -1,4 +1,5 @@
-#include "calls_to_action.h"
+#define _CRT_SECURE_NO_WARNINGS
+#include "calls_to_action.h" // Import calls to action functions
 #include <stdio.h>
 
 int main(void) {
@@ -9,6 +10,7 @@ int main(void) {
     readCalls(calls, providedFile, &numCalls);
 
     int option;
+    // Loop menu until the user chooses to exit
     do {
         printf("\nMENU:\n\n");
         printf("\t(1) Display all Calls to Action\n");
@@ -48,6 +50,7 @@ int main(void) {
         default:
             printf("\nERROR: Invalid option\n");
         }
+        clearBuffer();
     } while (option != 5);
 
     return 0;
