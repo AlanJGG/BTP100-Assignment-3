@@ -1,29 +1,21 @@
-// calls_to_action.h
 #ifndef CALLS_TO_ACTION_H
 #define CALLS_TO_ACTION_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#define MAX_CALLS 100
+#define MAX_LINE_LENGTH 255
 
-// Constants
-#define MAX_CALLS 10
-#define MAX_LINE_LENGTH 512
-
-// Structure to store a "Call to Action"
+// Structure for CallToAction
 typedef struct {
-  int number;
-  char category[30];
-  char description[500];
+    int number;
+    char category[30];
+    char description[255];
 } CallToAction;
 
-// Function prototypes
+// Function declarations
 void readCalls(CallToAction *calls, const char *fileName, int *numCalls);
 void displayCalls(const CallToAction *calls, int numCalls);
-void searchCallsByCategory(const CallToAction *calls, int numCalls,
-                           const char *category);
-void saveCallsByCategory(const CallToAction *calls, int numCalls,
-                         const char *category);
+void searchCallsByCategory(const CallToAction *calls, int numCalls, const char *category);
+void saveCallsByCategory(const CallToAction *calls, int numCalls, const char *category);
 void clearBuffer();
 
-#endif
+#endif // CALLS_TO_ACTION_H
