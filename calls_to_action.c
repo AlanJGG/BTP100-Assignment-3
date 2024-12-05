@@ -12,7 +12,7 @@ void readCalls(CallToAction *calls, const char *fileName, int *numCalls) {
   int i = 0;                       // Counter for number of calls loaded
 
   if (fp == NULL) { // Check if file opened successfully
-    perror("\nERROR: Could not open the file\n");
+    printf("\nERROR: Could not open the file\n");
     exit(EXIT_FAILURE);
   }
 
@@ -140,7 +140,7 @@ void saveCallsByCategory(const CallToAction *calls, int numCalls,
   
   FILE *fp = fopen(fileName, "w");
   if (fp == NULL) {
-    perror("\nERROR: Could not create the file\n");
+    printf("\nERROR: Could not create the file\n");
     return;
   }
   // Write the calls into the file
